@@ -90,6 +90,56 @@
         .border-gray-100 {
             border-color: rgb(42 91 189) !important;
         }
+
+        /* Smooth Animation */
+        .option-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+        }
+
+        .option-card:active {
+            transform: scale(0.95);
+        }
+
+        .correct {
+            animation: correctAnim 0.6s ease forwards;
+        }
+
+        .wrong {
+            animation: wrongAnim 0.6s ease forwards;
+        }
+
+        @keyframes correctAnim {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.08);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes wrongAnim {
+            0% {
+                transform: scale(1);
+            }
+
+            40% {
+                transform: scale(0.9);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        /* Stats smooth transition */
+        #stats {
+            transition: all 0.3s ease;
+        }
     </style>
 </head>
 
@@ -835,26 +885,208 @@ iii. ভেকী
 উত্তর: (ক) মানবমনের
         `;
 
+        // ====================== Main Logic ======================
+        const STORAGE_KEY = document.title || "MCQ_Practice_Aporichita";
+
+        let userAnswers = {};
+        let wrongQuestionsOnly = false;
+        let data = [];
+
+        // ==================== Helper Functions ====================
+        function loadProgress() {
+            const saved = localStorage.getItem(STORAGE_KEY);
+            if (saved) userAnswers = JSON.parse(saved);
+        }
+
+        function saveProgress() {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(userAnswers));
+        }
+
+        function resetProgress() {
+            if (confirm("সব প্রগ্রেস মুছে ফেলতে চান?")) {
+                localStorage.removeItem(STORAGE_KEY);
+                userAnswers = {};
+                location.reload();
+            }
+        }
+
+        function showStats() {
+            const total = data.length;
+            let attempted = 0, correct = 0;
+
+            Object.keys(userAnswers).forEach(idx => {
+                const index = parseInt(idx);
+                if (index >= 0 && index < total) {
+                    attempted++;
+                    if (userAnswers[idx] === data[index].answer) correct++;
+                }
+            });
+
+            const wrong = attempted - correct;
+            const unanswered = total - attempted;
+            return { total, correct, wrong, unanswered, attempted };
+        }
+
+        function updateStats() {
+            const stats = showStats();
+            const statsEl = document.getElementById('stats');
+            if (statsEl) {
+                statsEl.innerHTML = `
+                <div>মোট প্রশ্ন: <b>${stats.total}</b></div>
+                <div class="text-emerald-400">সঠিক: <b>${stats.correct}</b></div>
+                <div class="text-rose-400">ভুল: <b>${stats.wrong}</b></div>
+                <div class="text-amber-400">বাকি: <b>${stats.unanswered}</b></div>
+            `;
+            }
+        }
+
+        // ==================== Main Render Function ====================
+        function renderQuiz() {
+            loadProgress();
+            const container = document.getElementById('quiz-container');
+            container.innerHTML = '';
+
+            data = parseData(rawText);
+
+            // Stats Bar
+            const statsDiv = document.createElement('div');
+            statsDiv.id = 'stats';
+            statsDiv.className = "bg-slate-800 p-5 rounded-2xl mb-6 flex flex-wrap justify-between items-center gap-4 text-sm font-medium shadow-inner";
+            container.appendChild(statsDiv);
+
+            // Controls
+            const controls = document.createElement('div');
+            controls.className = "flex flex-wrap gap-3 mb-8";
+            controls.innerHTML = `
+            <button onclick="resetProgress()" class="bg-red-600 hover:bg-red-700 px-6 py-3 rounded-xl text-white font-medium flex items-center gap-2 transition">
+                🔄 সব রিসেট করুন
+            </button>
+            <button onclick="toggleWrongOnly()" id="wrong-btn" class="bg-amber-600 hover:bg-amber-700 px-6 py-3 rounded-xl text-white font-medium flex items-center gap-2 transition">
+                ❌ শুধু ভুল প্রশ্নগুলো আবার দাও
+            </button>
+        `;
+            container.appendChild(controls);
+
+            updateStats();
+
+            // Filtered Questions
+            const filteredData = wrongQuestionsOnly
+                ? data.map((q, i) => ({ ...q, originalIndex: i }))
+                    .filter((q, i) => userAnswers[i] && userAnswers[i] !== q.answer)
+                : data.map((q, i) => ({ ...q, originalIndex: i }));
+
+            filteredData.forEach((item) => {
+                const originalIdx = item.originalIndex;
+                const userChoice = userAnswers[originalIdx] || null;
+                const isCorrect = userChoice === data[originalIdx].answer;
+
+                const card = document.createElement('div');
+                card.className = "bg-white p-8 rounded-2xl shadow-xl border border-slate-700 modecontrol mb-8 transition-all duration-300";
+                card.dataset.index = originalIdx;
+
+                let statusHTML = '';
+                if (userChoice) {
+                    statusHTML = isCorrect
+                        ? `<div class="inline-flex items-center gap-2 text-green-500 font-bold"><span>✓</span> সঠিক উত্তর</div>`
+                        : `<div class="inline-flex items-center gap-2 text-red-500 font-bold"><span>✕</span> ভুল (সঠিক: ${data[originalIdx].answer})</div>`;
+                }
+
+                card.innerHTML = `
+                <div class="flex justify-between mb-6">
+                    <div class="text-lg font-semibold text-indigo-300">প্রশ্ন ${originalIdx + 1}</div>
+                    <div class="text-xs bg-slate-700 text-slate-300 px-4 py-1.5 rounded-full font-medium">
+                        ${originalIdx + 1} / ${data.length}
+                    </div>
+                </div>
+
+                <div class="text-gray-800 text-[1.1rem] leading-relaxed font-medium modecontrol mb-8">
+                    ${item.question.replace(/\n/g, '<br>')}
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="box-${originalIdx}">
+                    ${Object.entries(item.options).map(([key, val]) => `
+                        <div onclick="selectAnswer(${originalIdx}, '${key}', this)" 
+                             class="option-card p-5 rounded-xl border-2 transition-all mcqoption cursor-pointer
+                             ${userChoice === key ? (isCorrect ? 'correct border-green-500' : 'wrong border-red-500') : 'border-slate-600 hover:border-indigo-500'}">
+                            <span class="font-bold text-indigo-400">(${key})</span> 
+                            <span class="text-slate-200">${val}</span>
+                        </div>
+                    `).join('')}
+                </div>
+
+                <div id="msg-${originalIdx}" class="mt-6 text-base font-medium">
+                    ${statusHTML}
+                </div>
+            `;
+
+                container.appendChild(card);
+            });
+        }
+
+        // ==================== Answer Selection ====================
+        window.selectAnswer = function (qIndex, selected, element) {
+            const box = document.getElementById(`box-${qIndex}`);
+            if (box) box.querySelectorAll('.option-card').forEach(opt => opt.style.pointerEvents = 'none');
+
+            userAnswers[qIndex] = selected;
+            saveProgress();
+
+            const isCorrect = selected === data[qIndex].answer;
+
+            if (isCorrect) {
+                element.classList.add('correct');
+            } else {
+                element.classList.add('wrong');
+                setTimeout(() => {
+                    box.querySelectorAll('.option-card').forEach(opt => {
+                        if (opt.textContent.trim().startsWith(`(${data[qIndex].answer})`)) {
+                            opt.classList.add('correct');
+                        }
+                    });
+                }, 350);
+            }
+
+            updateStats();
+
+            setTimeout(() => {
+                renderQuiz();
+            }, 900);
+        };
+
+        function toggleWrongOnly() {
+            wrongQuestionsOnly = !wrongQuestionsOnly;
+            const btn = document.getElementById('wrong-btn');
+
+            if (wrongQuestionsOnly) {
+                btn.innerHTML = `🔄 সব প্রশ্ন দেখাও`;
+                btn.style.backgroundColor = '#4f46e5';
+            } else {
+                btn.innerHTML = `❌ শুধু ভুল প্রশ্নগুলো আবার দাও`;
+                btn.style.backgroundColor = '';
+            }
+
+            const container = document.getElementById('quiz-container');
+            container.style.transition = 'opacity 0.3s';
+            container.style.opacity = '0.5';
+
+            setTimeout(() => {
+                renderQuiz();
+                container.style.opacity = '1';
+            }, 250);
+        }
+
+        // Parse Function (আগেরটা রাখুন)
         function parseData(text) {
-            // উত্তর: (ক) এর পর নতুন প্রশ্ন শুরু হওয়ার লজিক
             const parts = text.trim().split(/(?=উত্তর:\s*\([ক-ঘ]\))/);
             const formattedQuestions = [];
-            let currentStimulus = "";
 
             for (let i = 0; i < parts.length - 1; i++) {
                 let questionSection = parts[i].trim();
                 let answerSection = parts[i + 1].trim();
 
-                // যদি আগের লুপ থেকে কোনো উদ্দীপক থাকে সেটা যোগ করা
-                if (i === 0 && questionSection.includes("উদ্দীপক")) {
-                    // প্রথম উদ্দীপক হ্যান্ডেল করা
-                }
-
-                // সঠিক উত্তর বের করা
                 const ansMatch = answerSection.match(/উত্তর:\s*\(([ক-ঘ])\)/);
                 const correctAnswer = ansMatch ? ansMatch[1] : "";
 
-                // অপশনগুলো বের করা (রেগুলার এক্সপ্রেশন দিয়ে প্রত্যেকটি ব্র্যাকেট আলাদা করা)
                 const options = {};
                 ['ক', 'খ', 'গ', 'ঘ'].forEach(sym => {
                     const reg = new RegExp(`\\(${sym}\\)\\s*([^(\\n]+)`);
@@ -862,7 +1094,6 @@ iii. ভেকী
                     options[sym] = match ? match[1].trim() : "অপশন পাওয়া যায়নি";
                 });
 
-                // প্রশ্ন থেকে অপশনগুলো এবং উত্তর ক্লিনার করা যাতে শুধু উদ্দীপক/প্রশ্ন থাকে
                 let cleanQuestion = questionSection.split(/\(ক\)/)[0].trim();
 
                 formattedQuestions.push({
@@ -871,63 +1102,15 @@ iii. ভেকী
                     answer: correctAnswer
                 });
 
-                // উত্তর সেকশন থেকে ব্যবহৃত উত্তরটুকু সরিয়ে ফেলা যাতে পরের প্রশ্নের টেক্সট পাওয়া যায়
                 parts[i + 1] = answerSection.replace(/উত্তর:\s*\([ক-ঘ]\)[^\n]*/, "").trim();
             }
             return formattedQuestions;
         }
 
-        function renderQuiz() {
-            const container = document.getElementById('quiz-container');
-            const data = parseData(rawText);
-
-            data.forEach((item, idx) => {
-                const card = document.createElement('div');
-                card.className = "bg-white p-8 rounded-2xl shadow-xl border border-slate-700 modecontrol";
-
-                card.innerHTML = `
-                    <div class="text-gray-800 text-lg mb-5 leading-relaxed font-medium modecontrol">
-                        ${item.question.replace(/\n/g, '<br>')}
-                    </div>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="box-${idx}">
-                        ${Object.entries(item.options).map(([key, val]) => `
-                            <div onclick="verify('${key}', '${item.answer}', ${idx}, this)" 
-                                 class="option-card p-4 rounded-lg border-gray-100 bg-gray-50 hover:border-indigo-300 mcqoption">
-                                <span class="font-bold text-indigo-600">(${key})</span> ${val}
-                            </div>
-                        `).join('')}
-                    </div>
-                    <div id="msg-${idx}" class="mt-4 text-sm font-bold hidden"></div>
-                `;
-                container.appendChild(card);
-            });
-        }
-
-        window.verify = function (selected, correct, id, el) {
-            const box = document.getElementById(`box-${id}`);
-            const msg = document.getElementById(`msg-${id}`);
-            const allOptions = box.querySelectorAll('.option-card');
-
-            if (selected === correct) {
-                el.classList.add('correct');
-                msg.innerText = "✓ সঠিক উত্তর হয়েছে!";
-                msg.className = "mt-4 text-green-600 font-bold";
-            } else {
-                el.classList.add('wrong');
-                allOptions.forEach(opt => {
-                    if (opt.innerText.trim().startsWith(`(${correct})`)) {
-                        opt.classList.add('correct');
-                    }
-                });
-                msg.innerText = "✕ ভুল উত্তর। সঠিক উত্তর হলো: (" + correct + ")";
-                msg.className = "mt-4 text-red-600 font-bold";
-            }
-
-            msg.classList.remove('hidden');
-            box.classList.add('pointer-events-none');
+        // Initialize
+        window.onload = function () {
+            renderQuiz();
         };
-
-        renderQuiz();
     </script>
 </body>
 
