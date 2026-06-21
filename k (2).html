@@ -1,0 +1,327 @@
+<html>
+
+<head>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+Bengali:wght@400;500;600&display=swap');
+
+        :root {
+            --bg: #0f172a;
+            --card: #1e2937;
+            --text: #e2e8f0;
+            --text-light: #94a3b8;
+            --accent: #22d3ee;
+            --accent2: #67e8f9;
+            --border: #334155;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', 'Noto Sans Bengali', system-ui, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            padding: 40px 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .container {
+            background-color: var(--card);
+            border-radius: 16px;
+            padding: 40px 50px;
+            box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.4);
+            border: 1px solid var(--border);
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            background: linear-gradient(90deg, #67e8f9, #22d3ee);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+            text-align: center;
+            padding-bottom: 15px;
+            border-bottom: 3px solid var(--accent);
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            margin-top: 50px;
+            margin-bottom: 20px;
+            color: var(--accent2);
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--border);
+        }
+
+        h3 {
+            font-size: 1.4rem;
+            margin-top: 35px;
+            margin-bottom: 15px;
+            color: #bae6fd;
+        }
+
+        h4 {
+            font-size: 1.2rem;
+            color: #bae6fd;
+            margin-top: 25px;
+        }
+
+        p {
+            margin-bottom: 18px;
+            color: var(--text-light);
+        }
+
+        ul,
+        ol {
+            margin-bottom: 25px;
+            padding-left: 30px;
+        }
+
+        li {
+            margin-bottom: 12px;
+            color: var(--text-light);
+        }
+
+        .rule {
+            background: rgba(103, 232, 249, 0.08);
+            border-left: 5px solid var(--accent);
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 8px;
+        }
+
+        .example {
+            background: rgba(15, 23, 42, 0.6);
+            padding: 18px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border: 1px solid #334155;
+            font-family: 'Inter', monospace;
+        }
+
+        .example strong {
+            color: #67e8f9;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            background: rgba(15, 23, 42, 0.6);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        th,
+        td {
+            padding: 16px 20px;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+
+        th {
+            background: #1e2937;
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        tr:hover {
+            background: rgba(103, 232, 249, 0.1);
+        }
+
+        .highlight {
+            background: rgba(103, 232, 249, 0.15);
+            padding: 2px 8px;
+            border-radius: 4px;
+            color: #67e8f9;
+        }
+
+        .section-number {
+            display: inline-block;
+            background: var(--accent);
+            color: #0f172a;
+            font-weight: 700;
+            width: 32px;
+            height: 32px;
+            text-align: center;
+            line-height: 32px;
+            border-radius: 50%;
+            margin-right: 12px;
+            font-size: 1.1rem;
+        }
+
+        .note {
+            font-size: 0.95rem;
+            color: #94a3b8;
+            font-style: italic;
+            margin-top: 8px;
+        }
+
+        code {
+            background: #1e2937;
+            padding: 3px 8px;
+            border-radius: 6px;
+            font-family: monospace;
+            color: #67e8f9;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            body {
+                padding: 20px 10px;
+            }
+
+            .container {
+                padding: 25px 20px;
+            }
+
+            h1 {
+                font-size: 2.2rem;
+            }
+        }
+
+        /* Beautiful scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #1e2937;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--accent);
+            border-radius: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <p>ফররুখ আহমদের <strong>‘পদ্মা’</strong> কবিতাটি মূলত পদ্মা নদীর প্রলয়ংকরী রূপ এবং তার পাশাপাশি মানুষের জীবনসংগ্রাম
+        ও অপরাজেয় শক্তির এক অপূর্ব প্রকাশ। এখানে প্রতিটি লাইনের সহজ ও বিস্তারিত ব্যাখ্যা দেওয়া হলো:</p>
+    <hr>
+    <h3 id="-"><strong>প্রথম স্তবক: পদ্মার প্রলয়ংকরী রূপ ও হার্মাদদের ভয়</strong></h3>
+    <blockquote>
+        <p><strong>&quot;অনেক ঘূর্ণিতে ঘুরে ঘুরে, পেয়ে ঢের সমুদ্রের স্বাদ,&quot;</strong></p>
+    </blockquote>
+    <ul>
+        <li><strong>ব্যাখ্যা:</strong> পদ্মা নদী তার তীব্র স্রোত আর ঘূর্ণিপাকের জন্য পরিচিত। এখানে বলা হচ্ছে, নদীটি
+            বিশাল সমুদ্রের মতোই উত্তাল। সমুদ্রের বুকে যেমন বড় বড় ঘূর্ণি থাকে, পদ্মার বুকেও তেমনি ঘূর্ণি রয়েছে যা
+            সমুদ্রের বিশালতা ও ভয়াবহতার স্বাদ মনে করিয়ে দেয়।</li>
+    </ul>
+    <blockquote>
+        <p><strong>&quot;জীবনের পথে পথে অভিজ্ঞতা কুড়ায়ে প্রচুর&quot;</strong></p>
+    </blockquote>
+    <ul>
+        <li><strong>ব্যাখ্যা:</strong> যারা দীর্ঘকাল ধরে সমুদ্রে বা নদীতে চলাচল করেছে, তাদের অভিজ্ঞতার কোনো কমতি নেই।
+            তারা জীবনের নানা চড়াই-উতরাই এবং ঝড়ের মুখোমুখি হয়ে প্রচুর অভিজ্ঞতা অর্জন করেছে।</li>
+    </ul>
+    <blockquote>
+        <p><strong>&quot;কেঁপেছে তোমাকে দেখে জলদস্যু-দুরন্ত হার্মাদ,&quot;</strong></p>
+    </blockquote>
+    <ul>
+        <li><strong>ব্যাখ্যা:</strong> ‘হার্মাদ’ হলো পর্তুগিজ জলদস্যু, যারা একসময় সমুদ্রে চরম আতঙ্ক সৃষ্টি করেছিল। তারা
+            ছিল অত্যন্ত সাহসী ও নিষ্ঠুর। কবি বলছেন, সেই ভয়ঙ্কর ও দুর্ধর্ষ জলদস্যুরাও যখন পদ্মার উত্তাল ও প্রলয়ংকরী রূপ
+            দেখেছে, তখন তারাও ভয়ে কেঁপে উঠেছে। অর্থাৎ, পদ্মার শক্তি মানুষের চেয়েও অনেক বেশি শক্তিশালী।</li>
+    </ul>
+    <hr>
+    <h3 id="-"><strong>দ্বিতীয় স্তবক: মানুষের সংগ্রামী চেতনা ও ফসল উৎপাদন</strong></h3>
+    <blockquote>
+        <p><strong>&quot;তোমার তরঙ্গভঙ্গে বর্ণ তার হয়েছে পান্ডুর!&quot;</strong></p>
+    </blockquote>
+    <ul>
+        <li><strong>ব্যাখ্যা:</strong> পদ্মার ঢেউয়ের আঘাত বা তরঙ্গভঙ্গ এতটাই মারাত্মক যে, তা দেখে সেই ভয়ঙ্কর জলদস্যুদের
+            মুখের রক্তিম আভা বা সাহস হারিয়ে যেত, ভয়ে মুখ ফ্যাকাশে (পান্ডুর) হয়ে যেত।</li>
+    </ul>
+    <blockquote>
+        <p><strong>&quot;সংগ্রামী মানুষ তবু দুই তীরে চালায়ে লাঙল&quot;</strong></p>
+    </blockquote>
+    <ul>
+        <li><strong>ব্যাখ্যা:</strong> নদীটি যতই ভয়ঙ্কর হোক না কেন, নদীর দুই তীরের সাধারণ মানুষ কিন্তু দমে যায়নি। তারা
+            অত্যন্ত সংগ্রামী। পদ্মার এই প্রলয় রূপকে উপেক্ষা করেই তারা নদীর দুই পাড়ে লাঙল চালিয়ে চাষাবাদ করে।</li>
+    </ul>
+    <blockquote>
+        <p><strong>&quot;কঠিন শ্রমের ফল-শস্য দানা পেয়েছে প্রচুর;&quot;</strong></p>
+    </blockquote>
+    <ul>
+        <li><strong>ব্যাখ্যা:</strong> মানুষের এই অদম্য ইচ্ছাশক্তি আর কঠিন পরিশ্রমের ফলেই তারা মাটি থেকে প্রচুর পরিমাণে
+            শস্য ও খাদ্যদানা উৎপাদন করতে সক্ষম হয়েছে।</li>
+    </ul>
+    <hr>
+    <h3 id="-"><strong>তৃতীয় স্তবক: পদ্মার পলি ও জীবনের জয়গান</strong></h3>
+    <blockquote>
+        <p><strong>&quot;উর্বর তোমার চরে ফলায়েছে পর্যাপ্ত ফসল!&quot;</strong></p>
+    </blockquote>
+    <ul>
+        <li><strong>ব্যাখ্যা:</strong> পদ্মা নদী যেমন ভাঙন ধরায়, তেমনি তার বয়ে আনা পলিমাটি দিয়ে দুই তীরের চরগুলোকে করে
+            তোলে অসম্ভব উর্বর। সেই উর্বর চরে কৃষকেরা প্রচুর পরিমাণে ফসল ফলায়।</li>
+    </ul>
+    <blockquote>
+        <p><strong>&quot;জীবন -মৃত্যুর দ্বন্দ্বে নিঃসংশয়, নির্ভীক জওয়ান&quot;</strong></p>
+    </blockquote>
+    <ul>
+        <li><strong>ব্যাখ্যা:</strong> পদ্মার পাড়ে জীবন ধারণ করা মানেই প্রতিনিয়ত ভাঙন আর বন্যার মুখোমুখি হওয়া। এটা এক
+            জীবন-মৃত্যুর খেলা। কিন্তু এই অঞ্চলের তরুণ ও সংগ্রামী মানুষগুলো (জওয়ান) কোনো দ্বিধা ছাড়াই অত্যন্ত নির্ভীকভাবে
+            সেখানে টিকে থাকে।</li>
+    </ul>
+    <blockquote>
+        <p><strong>&quot;সবুজের সমারোহে জীবনের পেয়েছে সম্বল।&quot;</strong></p>
+    </blockquote>
+    <ul>
+        <li><strong>ব্যাখ্যা:</strong> চরের বুকে যখন ফসলের সবুজ সমারোহ বা মাঠ ভরে ওঠে, তখন সেই ফসলের মাধ্যমেই মানুষ
+            তাদের বেঁচে থাকার রসদ বা জীবনের সম্বল খুঁজে পায়।</li>
+    </ul>
+    <hr>
+    <h3 id="-"><strong>চতুর্থ স্তবক: পদ্মার ধ্বংসাত্মক রূপ ও পুনর্জাগরণ</strong></h3>
+    <blockquote>
+        <p><strong>&quot;বর্ষায় তোমার স্রোতে গেছে ভেসে সাজানো বাগান,&quot;</strong></p>
+    </blockquote>
+    <ul>
+        <li><strong>ব্যাখ্যা:</strong> বর্ষাকালে পদ্মা চরম রুদ্রমূর্তি ধারণ করে। তখন তার তীব্র স্রোতে মানুষের পরম যত্নে
+            গড়া ঘরবাড়ি, জমিজমা ও সুন্দর &#39;সাজানো বাগান&#39; (মানুষের সংসার ও স্বপ্ন) নিমিষেই তলিয়ে বা ভেসে যায়।</li>
+    </ul>
+    <blockquote>
+        <p><strong>&quot;অসংখ্য জীবন, আর জীবনের অজস্র সম্ভার,&quot;</strong></p>
+    </blockquote>
+    <ul>
+        <li><strong>ব্যাখ্যা:</strong> পদ্মার এই করাল গ্রাসে শুধু ঘরবাড়ি নয়, অনেক মানুষের প্রাণহানি ঘটে এবং মানুষের
+            জীবনের নানা মূল্যবান সম্পদ ও উপার্জনের মাধ্যম চিরতরে হারিয়ে যায়।</li>
+    </ul>
+    <blockquote>
+        <p><strong>&quot;হে নদী! জেগেছে তবু পরিপূর্ণ আহবান,&quot;</strong></p>
+    </blockquote>
+    <ul>
+        <li><strong>ব্যাখ্যা:</strong> এত ধ্বংস, এত ক্ষয়ক্ষতির পরেও কিন্তু জীবন থেমে থাকে না। কবি নদীকে সম্বোধন করে
+            বলছেন, তোমার এই ধ্বংসলীলার মাঝেই আবার নতুন করে বেঁচে ওঠার, নতুন করে জেগে ওঠার এক পরিপূর্ণ আহ্বান ধ্বনিত হয়।
+        </li>
+    </ul>
+    <hr>
+    <h3 id="-"><strong>পঞ্চম স্তবক: জড়তা মুক্তি ও গতিশীলতার প্রতীক</strong></h3>
+    <blockquote>
+        <p><strong>&quot;মৃত জড়তার বুকে খুলেছে মুক্তির স্বর্ণদ্বার&quot;</strong></p>
+    </blockquote>
+    <ul>
+        <li><strong>ব্যাখ্যা:</strong> অলসতা, হতাশা বা থমকে থাকা হলো ‘মৃত জড়তা’। পদ্মা নদী তার তীব্র শক্তি দিয়ে মানুষের
+            মনের সেই জড়তা বা হতাশা দূর করে দেয়। মানুষ বুঝতে পারে, বসে থাকলে চলবে না, ভাঙনের পর আবার গড়তে হবে। এভাবেই
+            পদ্মা মানুষের মনে মুক্তির এক সোনালী দরজা (স্বর্ণদ্বার) খুলে দেয়।</li>
+    </ul>
+    <blockquote>
+        <p><strong>&quot;তোমার সুতীব্র গতি; তোমার প্রদীপ্ত স্রোতধারা।&quot;</strong></p>
+    </blockquote>
+    <ul>
+        <li><strong>ব্যাখ্যা:</strong> পদ্মার যে সুতীব্র গতি এবং উজ্জ্বল বা প্রদীপ্ত স্রোতধারা, তা কেবল ধ্বংসই করে না—তা
+            আসলে মানুষকে গতিশীল হতে শেখায়, স্থবিরতা ভেঙে সামনে এগিয়ে যাওয়ার অনুপ্রেরণা দেয়।</li>
+    </ul>
+    <hr>
+    <p><strong>মূলভাব:</strong> কবি ফররুখ আহমদ এই কবিতায় পদ্মাকে কেবল একটি নদী হিসেবে দেখাননি, তাকে দেখিয়েছেন জীবন ও
+        শক্তির এক প্রতীক হিসেবে। পদ্মা যেমন একদিকে ধ্বংস করে, অন্যদিকে তার পলিমাটি দিয়ে সৃষ্টি করে নতুন জীবন। আর মানুষও
+        সেই পদ্মার বুকে বুক চিতিয়ে লড়াই করে বেঁচে থাকে।</p>
+</body>
+
+</html>

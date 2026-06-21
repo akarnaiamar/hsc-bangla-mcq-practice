@@ -1,0 +1,310 @@
+<html>
+
+<head>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+Bengali:wght@400;500;600&display=swap');
+
+        :root {
+            --bg: #0f172a;
+            --card: #1e2937;
+            --text: #e2e8f0;
+            --text-light: #94a3b8;
+            --accent: #22d3ee;
+            --accent2: #67e8f9;
+            --border: #334155;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', 'Noto Sans Bengali', system-ui, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            padding: 40px 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .container {
+            background-color: var(--card);
+            border-radius: 16px;
+            padding: 40px 50px;
+            box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.4);
+            border: 1px solid var(--border);
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            background: linear-gradient(90deg, #67e8f9, #22d3ee);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+            text-align: center;
+            padding-bottom: 15px;
+            border-bottom: 3px solid var(--accent);
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            margin-top: 50px;
+            margin-bottom: 20px;
+            color: var(--accent2);
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--border);
+        }
+
+        h3 {
+            font-size: 1.4rem;
+            margin-top: 35px;
+            margin-bottom: 15px;
+            color: #bae6fd;
+        }
+
+        h4 {
+            font-size: 1.2rem;
+            color: #bae6fd;
+            margin-top: 25px;
+        }
+
+        p {
+            margin-bottom: 18px;
+            color: var(--text-light);
+        }
+
+        ul,
+        ol {
+            margin-bottom: 25px;
+            padding-left: 30px;
+        }
+
+        li {
+            margin-bottom: 12px;
+            color: var(--text-light);
+        }
+
+        .rule {
+            background: rgba(103, 232, 249, 0.08);
+            border-left: 5px solid var(--accent);
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 8px;
+        }
+
+        .example {
+            background: rgba(15, 23, 42, 0.6);
+            padding: 18px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border: 1px solid #334155;
+            font-family: 'Inter', monospace;
+        }
+
+        .example strong {
+            color: #67e8f9;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            background: rgba(15, 23, 42, 0.6);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        th,
+        td {
+            padding: 16px 20px;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+
+        th {
+            background: #1e2937;
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        tr:hover {
+            background: rgba(103, 232, 249, 0.1);
+        }
+
+        .highlight {
+            background: rgba(103, 232, 249, 0.15);
+            padding: 2px 8px;
+            border-radius: 4px;
+            color: #67e8f9;
+        }
+
+        .section-number {
+            display: inline-block;
+            background: var(--accent);
+            color: #0f172a;
+            font-weight: 700;
+            width: 32px;
+            height: 32px;
+            text-align: center;
+            line-height: 32px;
+            border-radius: 50%;
+            margin-right: 12px;
+            font-size: 1.1rem;
+        }
+
+        .note {
+            font-size: 0.95rem;
+            color: #94a3b8;
+            font-style: italic;
+            margin-top: 8px;
+        }
+
+        code {
+            background: #1e2937;
+            padding: 3px 8px;
+            border-radius: 6px;
+            font-family: monospace;
+            color: #67e8f9;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            body {
+                padding: 20px 10px;
+            }
+
+            .container {
+                padding: 25px 20px;
+            }
+
+            h1 {
+                font-size: 2.2rem;
+            }
+        }
+
+        /* Beautiful scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #1e2937;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--accent);
+            border-radius: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <p>কিশোর কবি সুকান্ত ভট্টাচার্যের <strong>‘আঠারো বছর বয়স’</strong> কবিতাটি তার বিখ্যাত ‘ছাড়পত্র’ কাব্যগ্রন্থের একটি
+        কালজয়ী কবিতা। এই কবিতায় কবি তারুণ্যের উদ্দীপনা, বৈশিষ্ট্য, শক্তি, এবং এর ভেতরের দ্বন্দ্ব ও সম্ভাবনাকে তুলে
+        ধরেছেন।</p>
+    <p>নিচে কবিতার প্রতিটি স্তবকের সহজ ও বিস্তারিত ব্যাখ্যা দেওয়া হলো:</p>
+    <hr>
+    <h3 id="-"><strong>প্রথম স্তবক: আঠারো বছর বয়সের দুঃসাহস</strong></h3>
+    <blockquote>
+        <p><strong>&quot;আঠারো বছর বয়স কী দুঃসহ / র্স্পধায় নেয় মাথা তোলবার ঝুঁকি, / আঠারো বছর বয়সেই অহরহ / বিরাট
+                দুঃসাহসেরা দেয় যে উঁকি।&quot;</strong></p>
+    </blockquote>
+    <ul>
+        <li><strong>ব্যাখ্যা:</strong> আঠারো বছর বয়স তথা কৈশোর থেকে যৌবনে পদার্পণের এই সময়টা অত্যন্ত &#39;দুঃসহ&#39; বা
+            তীব্র। এই বয়সে তরুণরা কোনো অন্যায় বা শৃঙ্খলের কাছে মাথা নত করতে চায় না। অন্যায়ের বিরুদ্ধে বুক চিতিয়ে
+            দাঁড়ানোর এক তীব্র স্পর্ধা ও ঝুঁকি নেওয়ার মানসিকতা তৈরি হয় তাদের মধ্যে। কোনো সাধারণ বা গণ্ডিবদ্ধ চিন্তা নয়,
+            বরং বড় বড় সব দুঃসাহসী স্বপ্ন ও পরিকল্পনা এই বয়সেই মনের ভেতর উঁকিঝুঁকি মারে।</li>
+    </ul>
+    <hr>
+    <h3 id="-"><strong>দ্বিতীয় স্তবক: বাধা ভাঙার অদম্য শক্তি</strong></h3>
+    <blockquote>
+        <p><strong>&quot;আঠারো বছর বয়সের নেই ভয় / পদাঘাতে চায় ভাঙতে পাথর বাধা, / এ বয়সে কেউ মাথা নোয়াবার নয়- /
+                আঠারো বছর বয়স জানে না কাঁদা।&quot;</strong></p>
+    </blockquote>
+    <ul>
+        <li><strong>ব্যাখ্যা:</strong> এই বয়সের প্রধান বৈশিষ্ট্য হলো এরা নির্ভীক। পথের সামনে যত বড় ‘পাথর’ বা কঠিন বাধাই
+            আসুক না কেন, তরুণরা পদাঘাতে (লাথি মেরে) তা ভেঙে গুঁড়িয়ে দিতে চায়। তারা কোনো অপশক্তির কাছে মাথা নোয়ায় না। এই
+            বয়স কোনো বিপদে পড়ে কান্নাকাটি করে সময় নষ্ট করতে জানে না, বরং লড়াই করে নিজের অধিকার ছিনিয়ে নিতে জানে।</li>
+    </ul>
+    <hr>
+    <h3 id="-"><strong>তৃতীয় স্তবক: আত্মত্যাগ ও আদর্শের সংকল্প</strong></h3>
+    <blockquote>
+        <p><strong>&quot;এ বয়স জানে রক্তদানের পুণ্য / বাষ্পের বেগে স্টিমারের মতো চলে, / প্রাণ দেওয়া-নেওয়া ঝুলিটা থাকে
+                না শূন্য / সঁপে আত্মাকে শপথের কোলাহলে।&quot;</strong></p>
+    </blockquote>
+    <ul>
+        <li><strong>ব্যাখ্যা:</strong> আঠারো বছর বয়স দেশের ও দশের মঙ্গলের জন্য নিজের রক্ত বা জীবন উৎসর্গ করতে দ্বিধা করে
+            না। তারা জানে মহৎ উদ্দেশ্যে রক্ত দেওয়া কতটা পুণ্যের কাজ। বাষ্পচালিত স্টিমার যেমন প্রবল গতিতে জল কেটে এগিয়ে
+            যায়, এই বয়সের গতিও তেমন অদম্য ও তীব্র। দেশের প্রয়োজনে জীবন দেওয়া কিংবা শত্রুর জীবন নেওয়ার ক্ষেত্রে তাদের হাত
+            বা ঝুলিতে কোনো দ্বিধা থাকে না। তারা আদর্শের জন্য যেকোনো শপথে নিজের আত্মাকে সঁপে দিতে প্রস্তুত থাকে।</li>
+    </ul>
+    <hr>
+    <h3 id="-"><strong>চতুর্থ স্তবক: যাতনা ও পারিপার্শ্বিক মন্ত্রণা</strong></h3>
+    <blockquote>
+        <p><strong>&quot;আঠরো বছর বয়স ভয়ঙ্কর / তাজা তাজা প্রাণে অসহ্য যন্ত্রণা, / এ বয়সে প্রাণ তীব্র আর প্রখর / এ
+                বয়সে কানে আসে কত মন্ত্রণা।&quot;</strong></p>
+    </blockquote>
+    <ul>
+        <li><strong>ব্যাখ্যা:</strong> আঠারো বছর বয়স যেমন শক্তির, তেমনি এটি বেশ ‘ভয়ঙ্করও’। কারণ এই বয়সে আবেগ থাকে তীব্র
+            এবং চারপাশের অন্যায়-অবিচার দেখে তাজা প্রাণগুলো এক অসহ্য যন্ত্রণায় ছটফট করে। জীবন সম্পর্কে তাদের অনুভূতিগুলো
+            খুব প্রখর হয়। এছাড়া, এই সংবেদনশীল বয়সে চারপাশে ভালো ও মন্দ—উভয় ধরনের নানা &#39;মন্ত্রণা&#39; বা উসকানি কানে
+            আসে, যা তরুণদের ভুল পথে চালিত করার ঝুঁকি তৈরি করে।</li>
+    </ul>
+    <hr>
+    <h3 id="-"><strong>পঞ্চম স্তবক: ঝোড়ো গতি ও বিপদের আশঙ্কা</strong></h3>
+    <blockquote>
+        <p><strong>&quot;আঠারো বছর বয়স যে দুর্বার / পথে প্রান্তরে ছোটায় বহু তুফান, / দুর্যোগে হাল ঠিক মতো রাখা ভার /
+                ক্ষত-বিক্ষত হয় সহস্র প্রাণ।&quot;</strong></p>
+    </blockquote>
+    <ul>
+        <li><strong>ব্যাখ্যা:</strong> এই বয়স এতটাই দুর্বার যে, তারা সমাজ ও রাষ্ট্রের স্থবিরতা ভাঙতে পথে-প্রান্তরে
+            পরিবর্তনের তুফান বা ঝড় তোলে। তবে আবেগ ও উত্তেজনার আধিক্যের কারণে জীবনের যেকোনো সংকটে বা ‘দুর্যোগে’ নিজের
+            নিয়ন্ত্রণ বা হাল ঠিক রাখা কঠিন হয়ে পড়ে। সঠিক নির্দেশনার অভাবে অনেক সময় এই বয়সের সহস্র প্রাণ ভুল পদক্ষেপে
+            ক্ষত-বিক্ষত ও ধ্বংস হয়ে যায়।</li>
+    </ul>
+    <hr>
+    <h3 id="-"><strong>ষষ্ঠ স্তবক: বেদনা ও দীর্ঘশ্বাস</strong></h3>
+    <blockquote>
+        <p><strong>&quot;আঠারো বছর বয়সে আঘাত আসে / অবিশ্র্রান্ত; একে একে হয় জড়ো, / এ বয়স কালো লক্ষ দীর্ঘশ্বাসে / এ
+                বয়স কাঁপে বেদনায় থরোথরো।&quot;</strong></p>
+    </blockquote>
+    <ul>
+        <li><strong>ব্যাখ্যা:</strong> তরুণরা যখন সমাজ পরিবর্তনের লড়াইয়ে নামে, তখন চারপাশ থেকে অবিরাম আঘাত বা বাধা আসতে
+            থাকে। ব্যর্থতা, হতাশা আর পারিপার্শ্বিক চাপে এই বয়স কখনো কখনো লক্ষ্য দীর্ঘশ্বাসে ভারাক্রান্ত হয়ে ওঠে। জীবনের
+            কঠিন বাস্তবতার মুখোমুখি দাঁড়িয়ে আবেগপ্রবণ এই বয়সটি বেদনায় থরোথরো করে কেঁপে ওঠে।</li>
+    </ul>
+    <hr>
+    <h3 id="-"><strong>সপ্তম স্তবক: তারুণ্যের জয়ধ্বনি ও নতুন সৃষ্টি</strong></h3>
+    <blockquote>
+        <p><strong>&quot;তবু আঠারোর শুনেছি জয়ধ্বনি, / এ বয়স বাঁচে দুর্যোগে আর ঝড়ে, / বিবাদের মুখে এ বয়স অগ্রণী / এ
+                বয়স তবু নতুন কিছু তো করে।&quot;</strong></p>
+    </blockquote>
+    <ul>
+        <li><strong>ব্যাখ্যা:</strong> এত কষ্ট, আঘাত আর বেদনার পরেও কিন্তু আঠারো বছর বয়স দমে যায় না। শেষ পর্যন্ত আঠারোর
+            জয়ধ্বনিই চারদিকে অনুরণিত হয়। সব ঝড়-ঝাপটা ও দুর্যোগের মাঝেও এই বয়স টিকে থাকে এবং যেকোনো বিপদ বা অন্যায়ের
+            বিরুদ্ধে সবার আগে বুক চিতিয়ে দাঁড়ায় (অগ্রণী ভূমিকা নেয়)। পুরোনো জরাজীর্ণ নিয়ম ভেঙে তারা সবসময় নতুন কিছু
+            সৃষ্টি করে।</li>
+    </ul>
+    <hr>
+    <h3 id="-"><strong>অষ্টম স্তবক: কবির প্রত্যাশা</strong></h3>
+    <blockquote>
+        <p><strong>&quot;এ বয়স জেনো ভীরু, কাপুরুষ নয় / পথ চলতে এ বয়স যায় না থেমে, / এ বয়সে তাই নেই কোনো সংশয়- / এ
+                দেশের বুকে আঠারো আসুক নেমে।।&quot;</strong></p>
+    </blockquote>
+    <ul>
+        <li><strong>ব্যাখ্যা:</strong> কবি শেষ স্তবকে জোর দিয়ে বলছেন, আঠারো বছর বয়স কোনোভাবেই ভীরু বা কাপুরুষের মতো ঘরে
+            বসে থাকার বয়স নয়। যেকোনো বাধা আসুক, এর পথ চলা কখনো থেমে যায় না। তাই কবির মনে কোনো সংশয় বা সন্দেহ নেই যে, এই
+            দেশের স্থবিরতা দূর করতে, অন্যায়ের প্রতিবাদ করতে এবং নতুন সূর্য আনতে আঠারো বছর বয়সের এই সতেজ, নির্ভীক ও
+            সংগ্রামী চেতনা ঘরে ঘরে প্রতিটি মানুষের মাঝে নেমে আসা দরকার।</li>
+    </ul>
+    <hr>
+    <p><strong>মূলভাব:</strong> সুকান্ত ভট্টাচার্য আঠারো বছর বয়সের নেতিবাচক ঝুঁকি ও যন্ত্রণার কথা স্বীকার করেও এর
+        ইতিবাচক ও বিপ্লবী রূপটিকে বড় করে দেখেছেন। তার মতে, একটি জাতির মুক্তি ও প্রগতির জন্য আঠারোর এই আপসহীন, তারুণ্যের
+        শক্তি ও উদ্দীপনা অত্যন্ত জরুরি।</p>
+</body>
+
+</html>

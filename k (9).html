@@ -1,0 +1,377 @@
+<html>
+
+<head>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+Bengali:wght@400;500;600&display=swap');
+
+        :root {
+            --bg: #0f172a;
+            --card: #1e2937;
+            --text: #e2e8f0;
+            --text-light: #94a3b8;
+            --accent: #22d3ee;
+            --accent2: #67e8f9;
+            --border: #334155;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', 'Noto Sans Bengali', system-ui, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            padding: 40px 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .container {
+            background-color: var(--card);
+            border-radius: 16px;
+            padding: 40px 50px;
+            box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.4);
+            border: 1px solid var(--border);
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            background: linear-gradient(90deg, #67e8f9, #22d3ee);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+            text-align: center;
+            padding-bottom: 15px;
+            border-bottom: 3px solid var(--accent);
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            margin-top: 50px;
+            margin-bottom: 20px;
+            color: var(--accent2);
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--border);
+        }
+
+        h3 {
+            font-size: 1.4rem;
+            margin-top: 35px;
+            margin-bottom: 15px;
+            color: #bae6fd;
+        }
+
+        h4 {
+            font-size: 1.2rem;
+            color: #bae6fd;
+            margin-top: 25px;
+        }
+
+        p {
+            margin-bottom: 18px;
+            color: var(--text-light);
+        }
+
+        ul,
+        ol {
+            margin-bottom: 25px;
+            padding-left: 30px;
+        }
+
+        li {
+            margin-bottom: 12px;
+            color: var(--text-light);
+        }
+
+        .rule {
+            background: rgba(103, 232, 249, 0.08);
+            border-left: 5px solid var(--accent);
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 8px;
+        }
+
+        .example {
+            background: rgba(15, 23, 42, 0.6);
+            padding: 18px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border: 1px solid #334155;
+            font-family: 'Inter', monospace;
+        }
+
+        .example strong {
+            color: #67e8f9;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            background: rgba(15, 23, 42, 0.6);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        th,
+        td {
+            padding: 16px 20px;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+
+        th {
+            background: #1e2937;
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        tr:hover {
+            background: rgba(103, 232, 249, 0.1);
+        }
+
+        .highlight {
+            background: rgba(103, 232, 249, 0.15);
+            padding: 2px 8px;
+            border-radius: 4px;
+            color: #67e8f9;
+        }
+
+        .section-number {
+            display: inline-block;
+            background: var(--accent);
+            color: #0f172a;
+            font-weight: 700;
+            width: 32px;
+            height: 32px;
+            text-align: center;
+            line-height: 32px;
+            border-radius: 50%;
+            margin-right: 12px;
+            font-size: 1.1rem;
+        }
+
+        .note {
+            font-size: 0.95rem;
+            color: #94a3b8;
+            font-style: italic;
+            margin-top: 8px;
+        }
+
+        code {
+            background: #1e2937;
+            padding: 3px 8px;
+            border-radius: 6px;
+            font-family: monospace;
+            color: #67e8f9;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            body {
+                padding: 20px 10px;
+            }
+
+            .container {
+                padding: 25px 20px;
+            }
+
+            h1 {
+                font-size: 2.2rem;
+            }
+        }
+
+        /* Beautiful scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #1e2937;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--accent);
+            border-radius: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <p>জীবনানন্দ দাশের <strong>‘সুচেতনা’</strong> কবিতাটি কবির এক গভীর দার্শনিক চেতনার ফসল। এখানে ‘সুচেতনা’ কোনো সাধারণ
+        নারী নয়, বরং মানুষের ভেতরের শুভ বুদ্ধিবোধ, চেতনা, বিবেক ও এক শান্তিময় সুন্দর পৃথিবীর প্রতীক। দ্বিতীয় বিশ্বযুদ্ধ
+        ও সমকালীন পৃথিবীর দাঙ্গা, রক্তপাত এবং হানাহানি দেখে কবি যে তীব্র কষ্ট পেয়েছিলেন, তার বিপরীতে এক সুদূর সুন্দর
+        ভবিষ্যতের স্বপ্ন তিনি এই কবিতায় এঁকেছেন।</p>
+    <p>নিচে কবিতার প্রতিটি লাইনের সহজ ও বিস্তারিত ব্যাখ্যা দেওয়া হলো:</p>
+    <hr>
+    <h3 id="-">স্তবক ১: সুচেতনার স্বরূপ ও পৃথিবীর আসল সত্য</h3>
+    <blockquote>
+        <p><strong>সুচেতনা, তুমি এক দূরতর দ্বীপ</strong>
+            <strong>বিকেলের নক্ষত্রের কাছে;</strong>
+            <strong>সেইখানে দারুচিনি-বনানীর ফাঁকে</strong>
+            <strong>নির্জনতা আছে।</strong>
+        </p>
+    </blockquote>
+    <ul>
+        <li><strong>ব্যাখ্যা:</strong> কবি তাঁর ভেতরের শুভ চেতনা বা ‘সুচেতনা’কে এক দূরবর্তী শান্ত দ্বীপের সাথে তুলনা
+            করছেন, যা বিকেলের প্রথম তারার মতো সুন্দর ও ধরাছোঁয়ার বাইরে। এই অশান্ত পৃথিবীর কোলাহল থেকে দূরে, এক শান্ত
+            সুগন্ধি দারুচিনি বনের ছায়ায় যেন সেই পরম শান্তি ও নির্জনতা লুকিয়ে আছে।</li>
+    </ul>
+    <blockquote>
+        <p><strong>এই পৃথিবীর রণ রক্ত সফলতা</strong>
+            <strong>সত্য; তবু শেষ সত্য নয়।</strong>
+        </p>
+    </blockquote>
+    <ul>
+        <li><strong>ব্যাখ্যা:</strong> এই পৃথিবীতে যুদ্ধ (রণ), রক্তপাত আর ক্ষমতার লড়াইয়ে জিতে যাওয়া বা ‘সফলতা’ অর্জন
+            করা— এগুলো বর্তমানের রূঢ় বাস্তবতা বা সত্য। কিন্তু কবি বিশ্বাস করেন, এই মারামারি আর হিংসাই মানুষের শেষ
+            গন্তব্য বা ‘শেষ সত্য’ হতে পারে না। এর বাইরেও সুন্দর কিছু আছে।</li>
+    </ul>
+    <blockquote>
+        <p><strong>কলকাতা একদিন কল্লোলিনী তিলোত্তমা হবে;</strong>
+            <strong>তবুও তোমার কাছে আমার হৃদয়।</strong>
+        </p>
+    </blockquote>
+    <ul>
+        <li><strong>ব্যাখ্যা:</strong> তৎকালীন আধুনিক ও কোলাহলমুখর কলকাতা শহর হয়তো একদিন রূপকথার মতো সুন্দরী, প্রাণবন্ত
+            ও তিলোত্তমা (অপূর্ব সুন্দর নগরী) হয়ে উঠবে। কিন্তু বাহ্যিক সেই চাকচিক্যের চেয়ে কবির মন পড়ে আছে সুচেতনার সেই
+            শান্ত, বিবেকবান ও শাশ্বত সুন্দর চেতনার কাছে।</li>
+    </ul>
+    <hr>
+    <h3 id="-">স্তবক ২: সমকালীন সংকট ও গভীর অসুখ</h3>
+    <blockquote>
+        <p><strong>আজকে অনেক রূঢ় রৌদ্রে ঘুরে প্রাণ</strong>
+            <strong>পৃথিবীর মানুষকে মানুষের মতো</strong>
+            <strong>ভালোবাসা দিতে গিয়ে তবু</strong>
+        </p>
+    </blockquote>
+    <ul>
+        <li><strong>ব্যাখ্যা:</strong> কবি জীবনের কঠিন ও বাস্তব পরিস্থিতিতে (রূঢ় রৌদ্রে) ঘুরে মানুষকে মানুষের মতো করে
+            নিঃস্বার্থ ভালোবাসতে চেয়েছিলেন। কিন্তু সেই ভালোবাসা দিতে গিয়ে তিনি এক ভয়াবহ সত্যের মুখোমুখি হলেন।</li>
+    </ul>
+    <blockquote>
+        <p><strong>দেখেছি আমারি হাতে হয়তো নিহত</strong>
+            <strong>ভাই বোন বন্ধু পরিজন প’ড়ে আছে;</strong>
+        </p>
+    </blockquote>
+    <ul>
+        <li><strong>ব্যাখ্যা:</strong> মানুষ যখন মানুষকে ভালোবাসতে যায়, তখন একদল মানুষকে আপন করতে গিয়ে অন্য দলটিকে শত্রু
+            বানিয়ে ফেলে (যেমন যুদ্ধ বা দাঙ্গার সময় নিজের দেশের বা দলের মানুষকে বাঁচাতে গিয়ে অন্য মানুষকে হত্যা করা হয়)।
+            কবি রূপক অর্থে বলছেন, মানবজাতির এই হানাহানিতে পরোক্ষভাবে যেন আমার নিজেরই ভাই-বোন, বন্ধু বা আপনজনেরা রক্তের
+            সাগরে ভেসে যাচ্ছে। মানুষের এই হিংস্রতা কবিকে ব্যথিত করে।</li>
+    </ul>
+    <blockquote>
+        <p><strong>পৃথিবীর গভীর গভীরতর অসুখ এখন;</strong>
+            <strong>মানুষ তবুও ঋণী পৃথিবীরই কাছে।</strong>
+        </p>
+    </blockquote>
+    <ul>
+        <li><strong>ব্যাখ্যা:</strong> মানুষের ভেতরের এই নৈতিক পতন, যুদ্ধ ও হিংসাকে কবি ‘পৃথিবীর গভীর গভীরতর অসুখ’
+            বলেছেন। চারদিকে এত কুশ্রীতা ও রোগ থাকা সত্ত্বেও মানুষ কিন্তু এই পৃথিবীর আলো-বাতাস-মাটিতেই বেঁচে থাকে, তাই
+            মানুষ কোনোভাবেই পৃথিবীর কাছে তার ঋণ অস্বীকার করতে পারে না।</li>
+    </ul>
+    <hr>
+    <h3 id="-">স্তবক ৩: পুঁজিবাদের লোভ ও মহাপুরুষদের নীরবতা</h3>
+    <blockquote>
+        <p><strong>কেবলি জাহাজ এসে আমাদের বন্দরের রোদে</strong>
+            <strong>দেখেছি ফসল নিয়ে উপনীত হয়;</strong>
+        </p>
+    </blockquote>
+    <ul>
+        <li><strong>ব্যাখ্যা:</strong> কবি দেখছেন আধুনিক সভ্যতার বন্দরে প্রতিনিয়ত জাহাজ এসে ভিড়ছে এবং প্রচুর ধন-সম্পদ বা
+            ফসল নিয়ে আসছে। এটি সভ্যতার বাণিজ্যের ও অগ্রগতির রূপ।</li>
+    </ul>
+    <blockquote>
+        <p><strong>সেই শস্য অগণন মানুষের শব;</strong>
+            <strong>শব থেকে উৎসারিত স্বর্ণের বিস্ময়</strong>
+        </p>
+    </blockquote>
+    <ul>
+        <li><strong>ব্যাখ্যা:</strong> কিন্তু এই যে তথাকথিত অর্থনৈতিক উন্নতি বা ফসল, তার পেছনে লুকিয়ে আছে লাখ লাখ সাধারণ
+            মানুষের লাশ (শব)। যুদ্ধ, শোষণ ও সাম্রাজ্যবাদের মাধ্যমে লাখ লাখ মানুষকে মেরে যে ধন-সম্পদ বা ‘স্বর্ণের বিস্ময়’
+            আনা হচ্ছে, কবি তাকে তীব্র ঘৃণা করেন।</li>
+    </ul>
+    <blockquote>
+        <p><strong>আমাদের পিতা বুদ্ধ কনফুশিয়সের মতো আমাদেরো প্রাণ</strong>
+            <strong>মূক ক’রে রাখে; তবু চারিদিকে রক্তক্লান্ত কাজের আহ্বান।</strong>
+        </p>
+    </blockquote>
+    <ul>
+        <li><strong>ব্যাখ্যা:</strong> সভ্যতার এই নির্মমতা ও রক্তের হোলিখেলা দেখে মহাত্মা গৌতম বুদ্ধ বা প্রাচীন চৈনিক
+            দার্শনিক কনফুসিয়াসের মতো মহাপুরুষদের আদর্শ আজ স্তব্ধ বা বোবা (মূক) হয়ে গেছে। কবি নিজেও স্তব্ধ হয়ে যান।
+            কিন্তু এই হতাশার মধ্যেও চারপাশের বাস্তব জীবন আমাদের ক্লান্ত ও রক্তাক্ত অস্তিত্ব নিয়েই বেঁচে থাকার ও কাজ করার
+            আহ্বান জানায়।</li>
+    </ul>
+    <hr>
+    <h3 id="-">স্তবক ৪: ভবিষ্যৎ পৃথিবীর রূপরেখা ও মানব সমাজ</h3>
+    <blockquote>
+        <p><strong>সুচেতনা, এই পথে আলো জ্বেলে— এ-পথেই পৃথিবীর ক্রমমুক্তি হবে;</strong>
+            <strong>সে অনেক শতাব্দীর মনীষীর কাজ;</strong>
+        </p>
+    </blockquote>
+    <ul>
+        <li><strong>ব্যাখ্যা:</strong> কবি সুচেতনা বা শুভ বুদ্ধিকে বলছেন— তোমার দেখানো এই সত্য ও ভালোবাসার পথে আলো
+            জ্বালিয়েই পৃথিবী একদিন ধীরে ধীরে সব পাপ ও যুদ্ধ থেকে মুক্তি (ক্রমমুক্তি) পাবে। তবে এই পরিবর্তন একদিনে হবে
+            না; যুগের পর যুগ ধরে বড় বড় জ্ঞানী-গুণী ও মননশীল মানুষদের (মনীষী) সাধনার ফলে এই সুন্দর পৃথিবী গড়ে উঠবে।</li>
+    </ul>
+    <blockquote>
+        <p><strong>এ-বাতাস কি পরম সূর্যকরোজ্জ্বল;</strong>
+            <strong>প্রায় তত দূর ভালো মানব-সমাজ</strong>
+        </p>
+    </blockquote>
+    <ul>
+        <li><strong>ব্যাখ্যা:</strong> এই পৃথিবীর বাতাস যেমন সূর্যের আলোয় ঝলমল (সূর্যকরোজ্জ্বল) ও সুন্দর, কবি স্বপ্ন
+            দেখছেন মানুষের সমাজটাও একদিন ঠিক ততটাই পবিত্র, সুন্দর ও আলোকিত হয়ে উঠবে।</li>
+    </ul>
+    <blockquote>
+        <p><strong>আমাদের মতো ক্লান্ত ক্লান্তিহীন নাবিকের হাতে</strong>
+            <strong>গ’ড়ে দেবো, আজ নয়, ঢের দূর অন্তিম প্রভাতে।</strong>
+        </p>
+    </blockquote>
+    <ul>
+        <li><strong>ব্যাখ্যা:</strong> এই সুন্দর সমাজ গড়ে তোলার দায়িত্ব কার? কবি বলছেন, আমাদের মতো মানুষ— যারা এই
+            পৃথিবীর দুঃখ দেখতে দেখতে ‘ক্লান্ত’, আবার নতুন সুন্দর পৃথিবী গড়ার স্বপ্নে ‘ক্লান্তিহীন’— সেইসব নাবিকদের হাত
+            ধরেই এই নতুন সমাজ তৈরি হবে। হয়তো তা আজই হবে না, তবে অনেক দূরবর্তী কোনো এক শেষের ভোরের আলোয় (অন্তিম প্রভাতে)
+            এই স্বপ্ন সত্যি হবে।</li>
+    </ul>
+    <hr>
+    <h3 id="-">স্তবক ৫: মানবজন্মের সার্থকতা ও অনন্ত আশা</h3>
+    <blockquote>
+        <p><strong>মাটি-পৃথিবীর টানে মানবজন্মের ঘরে কখন এসেছি,</strong>
+            <strong>না এলেই ভালো হ’তো অনুভব ক’রে;</strong>
+        </p>
+    </blockquote>
+    <ul>
+        <li><strong>ব্যাখ্যা:</strong> এই মাটির পৃথিবীর মায়ায় পড়ে কবি মানুষ হিসেবে জন্ম নিয়েছেন। কিন্তু পৃথিবীর এই যুদ্ধ
+            ও হিংসা দেখে মাঝেমধ্যে কবির মনে হতো— এই দুঃখের পৃথিবীতে মানুষ হিসেবে জন্ম না নিলেই হয়তো ভালো হতো।</li>
+    </ul>
+    <blockquote>
+        <p><strong>সে এসে যে গভীরতর লাভ হ’লো সে-সব বুঝেছি</strong>
+            <strong>শিশির শরীর ছুঁয়ে সমুজ্জ্বল ভোরে;</strong>
+        </p>
+    </blockquote>
+    <ul>
+        <li><strong>ব্যাখ্যা:</strong> কিন্তু কবি নিরাশাবাদী নন। যখন তিনি কোনো এক উজ্জ্বল ভোরে ঘাসের ওপর স্নিগ্ধ
+            শিশিরবিন্দুতে নিজের শরীর ছোঁয়ান, প্রকৃতির সেই অপার সৌন্দর্য দেখে তাঁর সব কষ্ট দূর হয়ে যায়। তখন তিনি বুঝতে
+            পারেন, এই পৃথিবীতে মানুষ হিসেবে জন্ম নিয়ে জীবন ও প্রকৃতির এই সৌন্দর্য উপভোগ করতে পারাটাই এক পরম ও গভীরতম
+            লাভ।</li>
+    </ul>
+    <blockquote>
+        <p><strong>দেখেছি যা হ’লো হবে মানুষের যা হবার নয়—</strong>
+            <strong>শাশ্বত রাত্রির বুকে সকলি অনন্ত সূর্যোদয়।</strong>
+        </p>
+    </blockquote>
+    <ul>
+        <li><strong>ব্যাখ্যা:</strong> কবি তাঁর দূরদৃষ্টি দিয়ে দেখছেন— অতীতে মানুষের কী কী ভুল হয়েছে, ভবিষ্যতে কী হবে,
+            আর মানুষের কোন কোন ভুলগুলো করা একদম উচিত ছিল না। কবি বিশ্বাস করেন, অন্ধকার রাত যেমন চিরকাল থাকে না, তেমনি
+            মানুষের ইতিহাসের এই অন্ধকার বা শাশ্বত রাত্রির বুক চিরে একদিন পরম শান্তি, আলো ও ভালোবাসার ‘অনন্ত সূর্যোদয়’
+            ঘটবেই। মানুষের শুভ বুদ্ধির জয় হবেই।</li>
+    </ul>
+</body>
+
+</html>

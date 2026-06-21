@@ -1,0 +1,349 @@
+<html>
+
+<head>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+Bengali:wght@400;500;600&display=swap');
+
+        :root {
+            --bg: #0f172a;
+            --card: #1e2937;
+            --text: #e2e8f0;
+            --text-light: #94a3b8;
+            --accent: #22d3ee;
+            --accent2: #67e8f9;
+            --border: #334155;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', 'Noto Sans Bengali', system-ui, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            padding: 40px 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .container {
+            background-color: var(--card);
+            border-radius: 16px;
+            padding: 40px 50px;
+            box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.4);
+            border: 1px solid var(--border);
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            background: linear-gradient(90deg, #67e8f9, #22d3ee);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+            text-align: center;
+            padding-bottom: 15px;
+            border-bottom: 3px solid var(--accent);
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            margin-top: 50px;
+            margin-bottom: 20px;
+            color: var(--accent2);
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--border);
+        }
+
+        h3 {
+            font-size: 1.4rem;
+            margin-top: 35px;
+            margin-bottom: 15px;
+            color: #bae6fd;
+        }
+
+        h4 {
+            font-size: 1.2rem;
+            color: #bae6fd;
+            margin-top: 25px;
+        }
+
+        p {
+            margin-bottom: 18px;
+            color: var(--text-light);
+        }
+
+        ul,
+        ol {
+            margin-bottom: 25px;
+            padding-left: 30px;
+        }
+
+        li {
+            margin-bottom: 12px;
+            color: var(--text-light);
+        }
+
+        .rule {
+            background: rgba(103, 232, 249, 0.08);
+            border-left: 5px solid var(--accent);
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 8px;
+        }
+
+        .example {
+            background: rgba(15, 23, 42, 0.6);
+            padding: 18px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border: 1px solid #334155;
+            font-family: 'Inter', monospace;
+        }
+
+        .example strong {
+            color: #67e8f9;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            background: rgba(15, 23, 42, 0.6);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        th,
+        td {
+            padding: 16px 20px;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+
+        th {
+            background: #1e2937;
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        tr:hover {
+            background: rgba(103, 232, 249, 0.1);
+        }
+
+        .highlight {
+            background: rgba(103, 232, 249, 0.15);
+            padding: 2px 8px;
+            border-radius: 4px;
+            color: #67e8f9;
+        }
+
+        .section-number {
+            display: inline-block;
+            background: var(--accent);
+            color: #0f172a;
+            font-weight: 700;
+            width: 32px;
+            height: 32px;
+            text-align: center;
+            line-height: 32px;
+            border-radius: 50%;
+            margin-right: 12px;
+            font-size: 1.1rem;
+        }
+
+        .note {
+            font-size: 0.95rem;
+            color: #94a3b8;
+            font-style: italic;
+            margin-top: 8px;
+        }
+
+        code {
+            background: #1e2937;
+            padding: 3px 8px;
+            border-radius: 6px;
+            font-family: monospace;
+            color: #67e8f9;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            body {
+                padding: 20px 10px;
+            }
+
+            .container {
+                padding: 25px 20px;
+            }
+
+            h1 {
+                font-size: 2.2rem;
+            }
+        }
+
+        /* Beautiful scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #1e2937;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--accent);
+            border-radius: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <p>সুফিয়া কামালের <strong>‘তাহারেই পড়ে মনে’</strong> কবিতাটি মূলত একটি সংলাপধর্মী কবিতা। কবি এবং কবির এক ভক্ত (বা
+        পাঠক)-এর মধ্যকার কথোপকথনের মাধ্যমে কবির ভেতরের তীব্র বিষাদ ও শূন্যতাবোধ এখানে ফুটে উঠেছে। নিচে আপনার দেওয়া
+        প্রতিটি লাইনের সহজ ও বিস্তারিত ব্যাখ্যা দেওয়া হলো:</p>
+    <hr>
+    <h3 id="-">স্তবক ১: বসন্তের আগমন ও কবির নীরবতা</h3>
+    <blockquote>
+        <p><strong>“হে কবি! নীরব কেন-ফাল্গুন যে এসেছে ধরায়,</strong>
+            <strong>বসন্তে বরিয়া তুমি লবে না কি তব বন্দনায়?”</strong>
+        </p>
+    </blockquote>
+    <ul>
+        <li><strong>ব্যাখ্যা:</strong> বসন্ত ঋতুর রাজা। ফাল্গুন মাস আসার মাধ্যমে পৃথিবীতে বসন্তের আগমন ঘটেছে। প্রকৃতিতে
+            আনন্দের জোয়ার। কিন্তু কবি উদাসীন, চুপচাপ। তাই কবির ভক্ত বা কবি-ভক্ত অবাক হয়ে জিজ্ঞেস করছেন— প্রকৃতিতে এত বড়
+            উৎসব, অথচ আপনি কেন চুপ করে আছেন? আপনি কি আপনার সুন্দর কবিতা বা গানের (বন্দনা) মাধ্যমে বসন্তকে বরণ করে নেবেন
+            না?</li>
+    </ul>
+    <blockquote>
+        <p><strong>কহিল সে স্নিগ্ধ আঁখি তুলি-</strong>
+            <strong>“দখিন দুয়ার গেছে খুলি?</strong>
+        </p>
+    </blockquote>
+    <ul>
+        <li><strong>ব্যাখ্যা:</strong> ভক্তের প্রশ্নের জবাবে কবি তাঁর শান্ত, করুণ ও মায়াবী চোখ তুলে উল্টো প্রশ্ন করলেন।
+            তিনি জানতে চাইলেন— বসন্তের যে দখিনা বাতাস আসে, তার জন্য কি দক্ষিণ দিকের দরজা খুলে গেছে? (কবি এতটাই উদাসীন যে
+            বাইরে বসন্ত এসেছে কিনা তা-ও তিনি টের পাননি)।</li>
+    </ul>
+    <blockquote>
+        <p><strong>বাতাবী নেবুর ফুল ফুটেছে কি? ফুটেছে কি আমের মুকুল?</strong>
+            <strong>দখিনা সমীর তার গন্ধে গন্ধে হয়েছে কি অধীর আকুল?”</strong>
+        </p>
+    </blockquote>
+    <ul>
+        <li><strong>ব্যাখ্যা:</strong> কবি আরও জানতে চাচ্ছেন— বাতাবি লেবুর ফুল আর আমের মুকুল কি ফুটেছে? দক্ষিণ দিক থেকে
+            আসা বাতাস (সমীর) কি সেই ফুলের গন্ধে ব্যাকুল হয়ে উঠেছে? প্রকৃতির এই চিরচেনা পরিবর্তনগুলো ঘটেছে কিনা, কবি
+            নিজের চোখে না দেখে অন্যের কাছে জানতে চাচ্ছেন, যা তাঁর চরম উদাসীনতার প্রমাণ।</li>
+    </ul>
+    <hr>
+    <h3 id="-">স্তবক ২: কবির উদাসীনতা ও অন্তরের শূন্যতা</h3>
+    <blockquote>
+        <p><strong>“এখনো দেখনি তুমি?” কহিলাম “কেন কবি আজ</strong>
+            <strong>এমন উন্মনা তুমি? কোথা তব নব পুষ্পসাজ?”</strong>
+        </p>
+    </blockquote>
+    <ul>
+        <li><strong>ব্যাখ্যা:</strong> এবার ভক্ত অবাক হয়ে বললেন— “আপনি এখনো এগুলো দেখেননি?” ভক্তের মনে প্রশ্ন জাগে, কবি
+            আজ কেন এত অন্যমনস্ক (উন্মনা)? বসন্ত এলে মানুষ যেভাবে নতুন সাজে সাজে, প্রকৃতির রঙে রঙ মেলায়, কবির জীবনে সেই
+            নতুন ফুলের সাজ (নব পুষ্পসাজ) বা আনন্দের ছোঁয়া কোথায়?</li>
+    </ul>
+    <blockquote>
+        <p><strong>কহিল সে সুদূরে চাহিয়া-</strong>
+            <strong>“অলখের পাথার বাহিয়া</strong>
+            <strong>তরী তার এসেছে কি? বেজেছে কি আগমনী গান?</strong>
+            <strong>ডেকেছে কি সে আমারে? -শুনি নাই,রাখিনি সন্ধান।”</strong>
+        </p>
+    </blockquote>
+    <ul>
+        <li><strong>ব্যাখ্যা:</strong> কবি শূন্য দৃষ্টিতে দূরের দিকে তাকিয়ে উত্তর দিলেন। ‘অলখ’ মানে যা দেখা যায় না
+            (অদৃশ্য) আর ‘পাথার’ মানে সমুদ্র। কবি বলছেন— অদৃশ্য এক সমুদ্র বেয়ে বসন্তের তরী কি সত্যি চলে এসেছে? তার আসার
+            কোনো গান কি বেজেছে? বসন্ত কি আমাকে ডেকেছে? আমি আসলে কিছুই শুনিনি, আর কোনো খোঁজখবরও রাখিনি। কবির মন অন্য এক
+            গভীর শোকে মগ্ন।</li>
+    </ul>
+    <hr>
+    <h3 id="-">স্তবক ৩: ভক্তের অনুরোধ ও কবির উদাস উত্তর</h3>
+    <blockquote>
+        <p><strong>কহিলাম “ওগো কবি, রচিয়া লহ না আজও গীতি,</strong>
+            <strong>বসন্ত-বন্দনা তব কণ্ঠে শুনি-এ মোর মিনতি।”</strong>
+        </p>
+    </blockquote>
+    <ul>
+        <li><strong>ব্যাখ্যা:</strong> ভক্ত নাছোড়বান্দা। তিনি কবিকে অনুরোধ (মিনতি) করে বললেন— “হে কবি, যা হওয়ার হয়েছে,
+            আপনি আজই নতুন গান বা কবিতা রচনা করুন। আপনার কণ্ঠে আমরা বসন্তের বন্দনা গান শুনতে চাই।”</li>
+    </ul>
+    <blockquote>
+        <p><strong>কহিল সে মৃদু মধুস্বরে-</strong>
+            <strong>“নাই হ’ল, না হোক এবারে-</strong>
+            <strong>আমার গাহিতে গান! বসন্তরে আনিতে ধরিয়া-</strong>
+            <strong>রহেনি,সে ভুলেনি তো, এসেছে তো ফাল্গুন স্মরিয়া।”</strong>
+        </p>
+    </blockquote>
+    <ul>
+        <li><strong>ব্যাখ্যা:</strong> কবি খুব মিষ্টি কিন্তু মৃদু, ক্লান্ত স্বরে বললেন— “এবার না হয় থাক, এবার আর আমার
+            গান গাইতে ইচ্ছে করছে না। আমি গান গাইলাম কি গাইলাম না, তাতে বসন্তের কী আসে যায়? বসন্ত তো আমার গানের জন্য আটকে
+            থাকেনি। সে ফাল্গুন মাসকে স্মরণ করে ঠিকই পৃথিবীতে চলে এসেছে।”</li>
+    </ul>
+    <hr>
+    <h3 id="-">স্তবক ৪: অভিমান নাকি উদাসীনতা?</h3>
+    <blockquote>
+        <p><strong>কহিলাম “ওগো কবি, অভিমান করেছ কি তাই?</strong>
+            <strong>যদিও এসেছে তবু তুমি তারে করিলে বৃথাই।”</strong>
+        </p>
+    </blockquote>
+    <ul>
+        <li><strong>ব্যাখ্যা:</strong> ভক্ত এবার ভাবলেন কবি হয়তো কোনো কারণে প্রকৃতির ওপর অভিমান করে আছেন। তাই তিনি
+            বললেন— “আপনি কি অভিমান করেছেন? বসন্ত প্রকৃতিতে আসলেও আপনি তাকে বরণ না করে, অবহেলা করে তার আগমনকে আনন্দহীন বা
+            বৃথা করে দিচ্ছেন।”</li>
+    </ul>
+    <blockquote>
+        <p><strong>কহিল সে পরম হেলায়-</strong>
+            <strong>“বৃথা কেন? ফাগুন বেলায়</strong>
+            <strong>ফুল কি ফোটে নি শাখে? পুষ্পারতি লভে নি কি ঋতুর রাজন?</strong>
+            <strong>মাধবী কুঁড়ির বুকে গন্ধ নাহি? করে নি সে অর্ঘ্য বিরচন?”</strong>
+        </p>
+    </blockquote>
+    <ul>
+        <li><strong>ব্যাখ্যা:</strong> কবি তখন খুব অবহেলার সাথে (পরম হেলায়) বললেন— “বৃথা হবে কেন? ফাল্গুনের এই সময়ে
+            গাছের ডালে কি ফুল ফোটেনি? ঋতুরাজ বসন্ত কি ফুলের বন্দনা বা উপহার (পুষ্পারতি) পায়নি? মাধবী লতার কুঁড়িতে কি
+            সুন্দর গন্ধ নেই? প্রকৃতি তো তার সবটুকু উজাড় করে বসন্তকে অর্ঘ্য (উপহার) সাজিয়ে বরণ করে নিয়েছে। প্রকৃতির উৎসব
+            তো থেমে নেই, শুধু আমার ভেতরেই কোনো আনন্দ নেই।”</li>
+    </ul>
+    <hr>
+    <h3 id="-">স্তবক ৫: আসল কারণ এবং মূল ভাব প্রকাশ</h3>
+    <blockquote>
+        <p><strong>“হোক, তবু বসন্তের প্রতি কেন এই তব তীব্র বিমুখতা?”</strong>
+            <strong>কহিলাম “উপেক্ষায় ঋতুরাজে কেন কবি দাও তুমি ব্যথা?”</strong>
+        </p>
+    </blockquote>
+    <ul>
+        <li><strong>ব্যাখ্যা:</strong> ভক্ত এবারও দমে গেলেন না। তিনি বললেন— “প্রকৃতির সবকিছু ঠিক আছে মানলাম, কিন্তু
+            আপনার কেন বসন্তের প্রতি এত অনীহা বা বিমুখতা? আপনি কেন এই সুন্দর ঋতুরাজকে এভাবে অবহেলা (উপেক্ষা) করে কষ্ট
+            দিচ্ছেন?”</li>
+    </ul>
+    <blockquote>
+        <p><strong>কহিল সে কাছে সরি আসি-</strong>
+            <strong>“কুহেলী উত্তরী তলে মাঘের সন্ন্যাসী-</strong>
+            <strong>গিয়াছে চলিয়া ধীরে পুষ্পশূন্য দিগন্তের পথে</strong>
+            <strong>রিক্ত হস্তে। তাহারেই পড়ে মনে, ভুলিতে পারি না কোন মতে।”</strong>
+        </p>
+    </blockquote>
+    <ul>
+        <li><strong>ব্যাখ্যা:</strong> অবশেষে কবি ভক্তের কাছে এগিয়ে এসে তাঁর নীরবতা ও কষ্টের আসল কারণটি প্রকাশ করলেন।
+            এখানে কবি রূপকের আশ্রয় নিয়েছেন:</li>
+        <li><strong>কুহেলী উত্তরী:</strong> কুয়াশার চাদর।</li>
+        <li><strong>মাঘের সন্ন্যাসী:</strong> শীত ঋতু (যাকে কবি এক রিক্ত, উদাসীন সন্ন্যাসীর সাথে তুলনা করেছেন)।</li>
+    </ul>
+    <p><strong>মূল কথা:</strong> শীত ঋতু যেমন কুয়াশার চাদর গায়ে দিয়ে, চারপাশের ফুল-পাতা ঝরিয়ে প্রকৃতিকে শূন্য
+        (পুষ্পশূন্য দিগন্ত) ও খালি হাতে (রিক্ত হস্তে) বিদায় নিয়েছে, কবির জীবন থেকেও ঠিক তেমনি এক প্রিয়জন চিরদিনের মতো
+        বিদায় নিয়েছে। (বাস্তব জীবনে কবির প্রথম স্বামী ও কাব্যসাধনার প্রেরণা সৈয়দ নেহাল হোসেনের আকস্মিক মৃত্যুতে কবির
+        জীবন বিষাদময় হয়ে পড়েছিল)।
+        প্রকৃতিতে বসন্তের আলোড়ন থাকলেও কবির মন জুড়ে রয়েছে শীতের সেই রিক্ততা ও প্রিয়জন হারানোর গভীর শোক। তাই কবি বলছেন—
+        বিদায় নেওয়া সেই শীতের রূপ ধরে থাকা প্রিয় মানুষটিকেই আমার বারবার মনে পড়ছে, তাঁকে আমি কোনোভাবেই ভুলতে পারছি না। আর
+        এই কারণেই বসন্তের আলো-রং কবিকে স্পর্শ করতে পারছে না।</p>
+</body>
+
+</html>

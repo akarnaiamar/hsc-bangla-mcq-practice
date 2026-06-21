@@ -1,0 +1,376 @@
+<html>
+
+<head>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+Bengali:wght@400;500;600&display=swap');
+
+        :root {
+            --bg: #0f172a;
+            --card: #1e2937;
+            --text: #e2e8f0;
+            --text-light: #94a3b8;
+            --accent: #22d3ee;
+            --accent2: #67e8f9;
+            --border: #334155;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', 'Noto Sans Bengali', system-ui, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            padding: 40px 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .container {
+            background-color: var(--card);
+            border-radius: 16px;
+            padding: 40px 50px;
+            box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.4);
+            border: 1px solid var(--border);
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            background: linear-gradient(90deg, #67e8f9, #22d3ee);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+            text-align: center;
+            padding-bottom: 15px;
+            border-bottom: 3px solid var(--accent);
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            margin-top: 50px;
+            margin-bottom: 20px;
+            color: var(--accent2);
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--border);
+        }
+
+        h3 {
+            font-size: 1.4rem;
+            margin-top: 35px;
+            margin-bottom: 15px;
+            color: #bae6fd;
+        }
+
+        h4 {
+            font-size: 1.2rem;
+            color: #bae6fd;
+            margin-top: 25px;
+        }
+
+        p {
+            margin-bottom: 18px;
+            color: var(--text-light);
+        }
+
+        ul,
+        ol {
+            margin-bottom: 25px;
+            padding-left: 30px;
+        }
+
+        li {
+            margin-bottom: 12px;
+            color: var(--text-light);
+        }
+
+        .rule {
+            background: rgba(103, 232, 249, 0.08);
+            border-left: 5px solid var(--accent);
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 8px;
+        }
+
+        .example {
+            background: rgba(15, 23, 42, 0.6);
+            padding: 18px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border: 1px solid #334155;
+            font-family: 'Inter', monospace;
+        }
+
+        .example strong {
+            color: #67e8f9;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            background: rgba(15, 23, 42, 0.6);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        th,
+        td {
+            padding: 16px 20px;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+
+        th {
+            background: #1e2937;
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        tr:hover {
+            background: rgba(103, 232, 249, 0.1);
+        }
+
+        .highlight {
+            background: rgba(103, 232, 249, 0.15);
+            padding: 2px 8px;
+            border-radius: 4px;
+            color: #67e8f9;
+        }
+
+        .section-number {
+            display: inline-block;
+            background: var(--accent);
+            color: #0f172a;
+            font-weight: 700;
+            width: 32px;
+            height: 32px;
+            text-align: center;
+            line-height: 32px;
+            border-radius: 50%;
+            margin-right: 12px;
+            font-size: 1.1rem;
+        }
+
+        .note {
+            font-size: 0.95rem;
+            color: #94a3b8;
+            font-style: italic;
+            margin-top: 8px;
+        }
+
+        code {
+            background: #1e2937;
+            padding: 3px 8px;
+            border-radius: 6px;
+            font-family: monospace;
+            color: #67e8f9;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            body {
+                padding: 20px 10px;
+            }
+
+            .container {
+                padding: 25px 20px;
+            }
+
+            h1 {
+                font-size: 2.2rem;
+            }
+        }
+
+        /* Beautiful scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #1e2937;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--accent);
+            border-radius: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <p>কবি আলাওলের ‘ঋতু বর্ণন’ কবিতার অংশটুকু মূলত মধ্যযুগীয় বাংলা সাহিত্যের (বিশেষত পদ্মাবতী কাব্যের অন্তর্ভুক্ত)
+        বারমাস্যা বা ঋতু বর্ণনার এক চমৎকার নিদর্শন। এখানে কবি প্রকৃতির পরিবর্তনের সাথে সাথে মানবমনের, বিশেষ করে দম্পতি
+        বা প্রেমিক-প্রেমিকার ভাব ও অনুভূতির পরিবর্তনের কথা তুলে ধরেছেন।</p>
+    <p>নিচে কবিতাটির প্রতিটি লাইনের সহজ ও বিস্তারিত ব্যাখ্যা দেওয়া হলো:</p>
+    <hr>
+    <h3 id="-"><strong>বসন্ত ঋতু</strong></h3>
+    <blockquote>
+        <p><strong>প্রথমে বসন্ত ঋতু নবীন পল্লব।</strong>
+            <strong>দুই পক্ষ আগে পাছে মধ্যে সুমাধব।।</strong>
+        </p>
+    </blockquote>
+    <ul>
+        <li><strong>ব্যাখ্যা:</strong> ঋতুচক্রের শুরুতেই আগমন ঘটে বসন্ত ঋতুর, আর গাছে গাছে দেখা দেয় নতুন কচি পাতা (নবীন
+            পল্লব)। বসন্তের এই সময়টিকে কবি চমৎকারভাবে ভাগ করেছেন—এর আগে ও পরে মিলিয়ে দুটি পক্ষ (বা মাস, ফাল্গুন ও বৈশাখ)
+            এবং ঠিক মাঝখানে অবস্থান করছে &#39;সুমাধব&#39; অর্থাৎ চৈত্র মাস বা বসন্তের ভরা যৌবন।</li>
+    </ul>
+    <blockquote>
+        <p><strong>মলয়া সমীর হৈল কামের পদাতি।</strong>
+            <strong>মুকুলিত কৈল তবে বৃক্ষ বনস্পতি।।</strong>
+        </p>
+    </blockquote>
+    <ul>
+        <li><strong>ব্যাখ্যা:</strong> মলয় পর্বত থেকে বয়ে আসা দক্ষিণাবাতাস বা &#39;মলয়া সমীর&#39; যেন প্রেমের দেবতা
+            কামদেবের পদাতিক সৈন্য (বার্তা বাহক বা অনুচর) হিসেবে হাজির হয়েছে। এই দখিনা বাতাসের ছোঁয়ায় বনের সমস্ত গাছপালা
+            ও বড় বড় বৃক্ষসমূহ (বনস্পতি) মুকুলে মুকুলে ভরে উঠেছে।</li>
+    </ul>
+    <blockquote>
+        <p><strong>কুসুমিত কিংশুক সঘন বন লাল।</strong>
+            <strong>পুস্পিত সুরঙ্গ মল্লি লবঙ্গ গুলাল।।</strong>
+        </p>
+    </blockquote>
+    <ul>
+        <li><strong>ব্যাখ্যা:</strong> বনে বনে পলাশ বা কিংশুক ফুল ফুটেছে, যার কারণে ঘন জঙ্গল লাল রঙে রঙিন হয়ে উঠেছে। এর
+            পাশাপাশি সুরঙ্গ (রঙিন ফুল), মল্লিকা, লবঙ্গ এবং গুলাল বা নানারকম সুগন্ধি ফুল ফুটে চারদিক আলো করে রেখেছে।</li>
+    </ul>
+    <blockquote>
+        <p><strong>ভ্রমরের ঝস্কার কোকিল কলরব।</strong>
+            <strong>শুনিত যুবক মনে জাগে অনুভব।।</strong>
+        </p>
+    </blockquote>
+    <ul>
+        <li><strong>ব্যাখ্যা:</strong> চারদিকে ভ্রমরের গুনগুনানি (ঝঙ্কার) আর কোকিলের কুহুতান বা মধুর কলরব শোনা যাচ্ছে।
+            এই ডাক ও প্রকৃতির এই রূপ শুনে তরুণ-তরুণী বা যুবকদের মনে প্রেমের গভীর অনুভূতি ও আকাঙ্ক্ষা জেগে ওঠে।</li>
+    </ul>
+    <blockquote>
+        <p><strong>নানা পুষ্প মালা গলে বড় হরষিত।</strong>
+            <strong>বিচিত্র বসন অঙ্গে চন্দন চর্চিত।।</strong>
+        </p>
+    </blockquote>
+    <ul>
+        <li><strong>ব্যাখ্যা:</strong> বসন্তের এই আনন্দময় পরিবেশে মানুষ গলায় নানারকম ফুলের মালা পরে অত্যন্ত আনন্দিত
+            (হরষিত) হয়। তারা শরীরে রঙিন ও বিচিত্র পোশাক (বসন) পরিধান করে এবং দেহে সুগন্ধি চন্দন মেখে উৎসবের আমেজে মেতে
+            ওঠে।</li>
+    </ul>
+    <hr>
+    <h3 id="-"><strong>গ্রীষ্ম ঋতু (নিদাঘ)</strong></h3>
+    <blockquote>
+        <p><strong>নিদাঘ সমএ অতি প্রচ-তপন।</strong>
+            <strong>রৌদ্র ত্রাসে রহে ছায়া চরণে সরণ।।</strong>
+        </p>
+    </blockquote>
+    <ul>
+        <li><strong>ব্যাখ্যা:</strong> গ্রীষ্মকালে (নিদাঘ সময়ে) সূর্য অত্যন্ত প্রচণ্ড উত্তাপ (তপন) দেয়। রোদের এই তীব্রতা
+            ও ভয়ের (ত্রাসে) কারণে মানুষ তো বটেই, এমনকি গাছের ছায়াও যেন নিজেকে বাঁচাতে নিজের পায়ের নিচে (বৃক্ষের চরণে)
+            আশ্রয় বা স্মরণ নেয়।</li>
+    </ul>
+    <blockquote>
+        <p><strong>চন্দন চম্পক মাল্য মলয়া পবন।</strong>
+            <strong>সতত দম্পতি সঙ্গে ব্যাপিত মদন।।</strong>
+        </p>
+    </blockquote>
+    <ul>
+        <li><strong>ব্যাখ্যা:</strong> গ্রীষ্মের এই তীব্র গরম থেকে বাঁচতে দম্পতিরা শরীরে চন্দন মাখে, চম্পা ফুলের মালা
+            পরে এবং শীতল মলয়া বাতাসের খোঁজ করে। এই শীতল অনুষঙ্গগুলোর মাঝে দম্পতিদের মনে সারাক্ষণ প্রেমের দেবতা মদন (কাম
+            বা প্রেমভাব) বিস্তার করে থাকে।</li>
+    </ul>
+    <hr>
+    <h3 id="-"><strong>বর্ষা ঋতু (পাবস)</strong></h3>
+    <blockquote>
+        <p><strong>পাবস সময় ঘন ঘন গরজিত।</strong>
+            <strong>নির্ভয়ে বরিষে জল চৌদিকে পূরিত।।</strong>
+        </p>
+    </blockquote>
+    <ul>
+        <li><strong>ব্যাখ্যা:</strong> বর্ষাকালে (পাবস সময়ে) আকাশে মেঘেরা ঘন ঘন গর্জন করতে থাকে। আর আকাশ থেকে কোনো বাধা
+            ছাড়াই অত্যন্ত নির্ভয়ে অঝোরে বৃষ্টি ঝরে চারদিকের নদী-নালা, খাল-বিল জল দিয়ে পূর্ণ করে দেয়।</li>
+    </ul>
+    <blockquote>
+        <p><strong>ঘোর শব্দে কৈলাসে মল্লার রাগ গাত্র।</strong>
+            <strong>দাদুরী শিখীনি রব অতি মন ভাএ।।</strong>
+        </p>
+    </blockquote>
+    <ul>
+        <li><strong>ব্যাখ্যা:</strong> মেঘের সেই গুরুগম্ভীর মেঘমন্দ্র শব্দ যেন স্বর্গের কৈলাস পর্বতে &#39;মল্লার
+            রাগ&#39; (বর্ষার রাগ বা সুর) গাওয়ার মতো শোনায়। এই মেঘের ডাক শুনে ব্যাঙ (দাদুরী) ও ময়ূরী (শিখীনি) যে ডাক বা
+            রব ছাড়ে, তা মানুষের মনকে ভীষণ আনন্দ দেয়।</li>
+    </ul>
+    <blockquote>
+        <p><strong>কীটকুল রব পুনি ঝংকারে ঝংকারে।</strong>
+            <strong>শুনিতে যুবক চিত্ত হরষিত ডরে।।</strong>
+        </p>
+    </blockquote>
+    <ul>
+        <li><strong>ব্যাখ্যা:</strong> বৃষ্টির রাতে ঝিঁঝিঁ পোকা বা বিভিন্ন কীটপতঙ্গের দল বারবার ঝংকার দিয়ে ডেকে ওঠে।
+            প্রকৃতির এই গম্ভীর ও রোমাঞ্চকর পরিবেশের শব্দ শুনলে যুবকদের মন একদিকে যেমন আনন্দিত হয়, অন্যদিকে এক অদ্ভুত
+            মিষ্টি ভয়েও কেঁপে ওঠে।</li>
+    </ul>
+    <hr>
+    <h3 id="-"><strong>শরৎ ঋতু</strong></h3>
+    <blockquote>
+        <p><strong>আইল শারদ ঋতু নির্মল আকাশে।</strong>
+            <strong>দোলাএ চামার কেশ কুসুম বিকাশে।।</strong>
+        </p>
+    </blockquote>
+    <ul>
+        <li><strong>ব্যাখ্যা:</strong> বর্ষা শেষে আকাশে মেঘের ঘনঘটা কেটে গিয়ে নির্মল ও পরিষ্কার নীল আকাশ নিয়ে শরৎ ঋতুর
+            আগমন ঘটে। এই সময়ে কাশফুল (যা দেখতে চামর বা সাদা চুলের গোছার মতো) ফুটে ওঠে এবং বাতাসে দুলতে থাকে।</li>
+    </ul>
+    <blockquote>
+        <p><strong>নবীন খঞ্জনে দেখি বড়ই কৌতুক।</strong>
+            <strong>উপজিত যামিনী দম্পতি মনে সুখ।।</strong>
+        </p>
+    </blockquote>
+    <ul>
+        <li><strong>ব্যাখ্যা:</strong> শরৎকালে চঞ্চল &#39;খঞ্জন&#39; পাখির আনাগোনা দেখে মনে বেশ কৌতুক ও আনন্দের সৃষ্টি
+            হয়। শরতের এই মনোরম ও শান্ত রাতে (যামিনী) দম্পতিদের মনে গভীর সুখের উদয় হয়।</li>
+    </ul>
+    <hr>
+    <h3 id="-"><strong>হেমন্ত ও শীত ঋতু</strong></h3>
+    <blockquote>
+        <p><strong>প্রবেশে হেমন্ত ঋতু শীত অতি যায়।</strong>
+            <strong>পুষ্প তুল্য তাম্বূল অধিক সুখ হয়।।</strong>
+        </p>
+    </blockquote>
+    <ul>
+        <li><strong>ব্যাখ্যা:</strong> এরপর প্রকৃতিতে হেমন্ত ঋতুর প্রবেশ ঘটে, যা ধীরে ধীরে তীব্র শীতের আগমনকে জানান দেয়।
+            এই সময়ে হালকা ঠাণ্ডা আমেজে ফুলের মতো সুবাসিত পান (তাম্বূল) চিবানো মানুষের কাছে অত্যন্ত সুখকর ও আরামদায়ক মনে
+            হয়।</li>
+    </ul>
+    <blockquote>
+        <p><strong>শীতের তরাসে রবি তুরিতে লুকাএ।</strong>
+            <strong>অতি দীর্ঘ সুখ নিশি পলকে পোহাএ।।</strong>
+        </p>
+    </blockquote>
+    <ul>
+        <li><strong>ব্যাখ্যা:</strong> শীতের ভয়ে (তরাসে) সূর্য (রবি) যেন দিনে তাড়াতাড়ি (তুরিতে) অস্ত যায় বা লুকিয়ে পড়ে।
+            আর শীতের দীর্ঘ রাতগুলো দম্পতিদের প্রেম-ভালোবাসার সুখে অতি দ্রুত বা এক পলকেই কেটে যায় (পোহায়)।</li>
+    </ul>
+    <blockquote>
+        <p><strong>পুষ্প শয্যা ভেদ ভুলি বিচিত্র বসন।</strong>
+            <strong>উরে উরে এক হৈল শীত নিবারণ।।</strong>
+        </p>
+    </blockquote>
+    <ul>
+        <li><strong>ব্যাখ্যা:</strong> শীতের তীব্রতায় ফুলের বিছানার কোমলতা বা বাহারি পোশাকের জৌলুসের কথা ভুলে গিয়ে,
+            প্রেমিক-প্রেমিকা বা দম্পতিরা একে অপরের বুকে বুক মিলিয়ে (উরে উরে এক হয়ে) আলিঙ্গনাবদ্ধ হয় এবং এভাবেই তারা শীত
+            দূর (নিবারণ) করে।</li>
+    </ul>
+    <blockquote>
+        <p><strong>কাফুর কস্ত্তরী চুয়া যাবক সৌরভ।</strong>
+            <strong>দম্পতির চিত্তের চেতন অনুভব।।</strong>
+        </p>
+    </blockquote>
+    <ul>
+        <li><strong>ব্যাখ্যা:</strong> আলিংগনাবদ্ধ দম্পতিদের শরীর থেকে কর্পূর (কাফুর), কস্তুরী, চুয়া (একপ্রকার সুগন্ধি
+            তরল) ও আলতার (যাবক) সুগন্ধ ছড়াতে থাকে। এই তীব্র সুবাস দম্পতিদের মনে এক গভীর ও সচেতন প্রেম-অনুভূতির জন্ম দেয়।
+        </li>
+    </ul>
+</body>
+
+</html>
