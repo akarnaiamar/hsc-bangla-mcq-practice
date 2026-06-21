@@ -1532,11 +1532,22 @@ iii. চিত্রকল্প ব্যবহারে
         // ====================== Main Logic ======================
         const STORAGE_KEY = document.title || "MCQ_Practice_Aporichita";
 
+        let reviewList = [];
+        let reviewMode = false;
         let userAnswers = {};
         let wrongQuestionsOnly = false;
         let data = [];
 
         // ==================== Helper Functions ====================
+        function loadReviewList() {
+            const saved = localStorage.getItem(STORAGE_KEY + "_review");
+            if (saved) reviewList = JSON.parse(saved);
+        }
+
+        function saveReviewList() {
+            localStorage.setItem(STORAGE_KEY + "_review", JSON.stringify(reviewList));
+        }
+
         function loadProgress() {
             const saved = localStorage.getItem(STORAGE_KEY);
             if (saved) userAnswers = JSON.parse(saved);
@@ -1608,16 +1619,24 @@ iii. চিত্রকল্প ব্যবহারে
             <button onclick="toggleWrongOnly()" id="wrong-btn" class="bg-amber-600 hover:bg-amber-700 px-6 py-3 rounded-xl text-white font-medium flex items-center gap-2 transition">
                 ❌ শুধু ভুল প্রশ্নগুলো আবার দাও
             </button>
+            <button onclick="toggleReviewMode()" id="review-btn" class="bg-purple-600 hover:bg-purple-700 px-6 py-3 rounded-xl text-white font-medium flex items-center gap-2 transition">
+                📌 Need to Review (${reviewList.length})
+            </button>
         `;
             container.appendChild(controls);
 
             updateStats();
 
             // Filtered Questions
-            const filteredData = wrongQuestionsOnly
-                ? data.map((q, i) => ({ ...q, originalIndex: i }))
-                    .filter((q, i) => userAnswers[i] && userAnswers[i] !== q.answer)
-                : data.map((q, i) => ({ ...q, originalIndex: i }));
+            let filteredData = data.map((q, i) => ({ ...q, originalIndex: i }));
+
+            if (reviewMode) {
+                filteredData = filteredData.filter(item => reviewList.includes(item.originalIndex));
+            } else if (wrongQuestionsOnly) {
+                filteredData = filteredData.filter((item, i) =>
+                    userAnswers[i] && userAnswers[i] !== data[i].answer
+                );
+            }
 
             filteredData.forEach((item) => {
                 const originalIdx = item.originalIndex;
@@ -1638,6 +1657,13 @@ iii. চিত্রকল্প ব্যবহারে
                 card.innerHTML = `
                 <div class="flex justify-between mb-6">
                     <div class="text-lg font-semibold text-indigo-300">প্রশ্ন ${originalIdx + 1}</div>
+                    <label class="flex items-center gap-1.5 cursor-pointer">
+                        <input type="checkbox" 
+                            ${reviewList.includes(originalIdx) ? 'checked' : ''} 
+                            onchange="toggleReview(${originalIdx}, this.checked)"
+                            class="w-5 h-5 accent-purple-500">
+                        <span class="text-purple-400 text-sm font-medium">Review</span>
+                    </label>
                     <div class="text-xs bg-slate-700 text-slate-300 px-4 py-1.5 rounded-full font-medium">
                         ${originalIdx + 1} / ${data.length}
                     </div>
@@ -1719,6 +1745,41 @@ iii. চিত্রকল্প ব্যবহারে
             }, 250);
         }
 
+        function toggleReview(qIndex, isChecked) {
+            if (isChecked) {
+                if (!reviewList.includes(qIndex)) reviewList.push(qIndex);
+            } else {
+                reviewList = reviewList.filter(idx => idx !== qIndex);
+            }
+            saveReviewList();
+            updateReviewButton();
+        }
+
+        function updateReviewButton() {
+            const btn = document.getElementById('review-btn');
+            if (btn) btn.textContent = `📌 Need to Review (${reviewList.length})`;
+        }
+
+        function toggleReviewMode() {
+            reviewMode = !reviewMode;
+            const btn = document.getElementById('review-btn');
+
+            if (reviewMode) {
+                btn.style.backgroundColor = '#6b21a8';
+                btn.innerHTML = `🔄 সব প্রশ্ন দেখাও`;
+            } else {
+                btn.style.backgroundColor = '';
+                btn.innerHTML = `📌 Need to Review (${reviewList.length})`;
+            }
+
+            const container = document.getElementById('quiz-container');
+            container.style.opacity = '0.5';
+            setTimeout(() => {
+                renderQuiz();
+                container.style.opacity = '1';
+            }, 250);
+        }
+
         // Parse Function (আগেরটা রাখুন)
         function parseData(text) {
             const parts = text.trim().split(/(?=উত্তর:\s*\([ক-ঘ]\))/);
@@ -1754,6 +1815,8 @@ iii. চিত্রকল্প ব্যবহারে
         // Initialize
         window.onload = function () {
             renderQuiz();
+            loadReviewList();
+            updateReviewButton();
         };
     </script>
 </body>
